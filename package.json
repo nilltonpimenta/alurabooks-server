@@ -1,0 +1,16 @@
+{
+    "name": "alura-books-server",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon App.js"
+    },
+    "author": "Júllio",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "express": "^5.1.0",
+        "nodemon": "^3.1.9"
+    }
+}
