@@ -3,7 +3,7 @@ const routerLivro = require("./routes/livro");
 
 const app = express();
 
-app.use("/livro", routerLivro);
+app.use("/livros", routerLivro);
 
 const port = 8000;
 
