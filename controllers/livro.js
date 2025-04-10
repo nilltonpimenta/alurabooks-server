@@ -2,6 +2,7 @@ const {
     getTodosLivros,
     getLivroPorId,
     insereLivro,
+    modificaLivro,
 } = require("../services/livro");
 
 function getLivros(req, res) {
@@ -31,7 +32,20 @@ function postLivro(req, res) {
         const livroNovo = req.body;
         insereLivro(livroNovo);
         res.status(201);
-        res.send("Livro inserido com Sucesso");
+        res.send("Livro inserido com sucesso!");
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
+function patchLivro(req, res) {
+    try {
+        const id = req.params.id;
+        const body = req.body;
+
+        modificaLivro(body, id);
+        res.send("Item modificado com sucesso!");
     } catch (error) {
         res.status(500);
         res.send(error.message);
@@ -42,4 +56,5 @@ module.exports = {
     getLivros,
     getLivro,
     postLivro,
+    patchLivro,
 };
