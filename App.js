@@ -2,6 +2,7 @@ const express = require("express");
 const routerLivro = require("./routes/livro");
 
 const app = express();
+app.use(express.json());
 
 app.use("/livros", routerLivro);
 
