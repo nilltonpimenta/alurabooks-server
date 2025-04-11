@@ -3,6 +3,7 @@ const {
     getLivroPorId,
     insereLivro,
     modificaLivro,
+    deletaLivro,
 } = require("../services/livro");
 
 function getLivros(req, res) {
@@ -52,9 +53,22 @@ function patchLivro(req, res) {
     }
 }
 
+function deleteLivro(req, res) {
+    try {
+        const id = req.params.id;
+
+        deletaLivro(id);
+        res.send("Item deletado com sucesso!");
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
 module.exports = {
     getLivros,
     getLivro,
     postLivro,
     patchLivro,
+    deleteLivro,
 };
