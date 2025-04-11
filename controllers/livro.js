@@ -36,9 +36,14 @@ function getLivro(req, res) {
 function postLivro(req, res) {
     try {
         const livroNovo = req.body;
-        insereLivro(livroNovo);
-        res.status(201);
-        res.send("Livro inserido com sucesso!");
+        if (req.body.id && req.body.id) {
+            insereLivro(livroNovo);
+            res.status(201);
+            res.send("Livro inserido com sucesso!");
+        } else {
+            res.status(422);
+            res.send("Os campos id e nome são obrigatório!");
+        }
     } catch (error) {
         res.status(500);
         res.send(error.message);
