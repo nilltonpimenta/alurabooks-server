@@ -42,6 +42,6 @@ module.exports = {
     getTodosLivros,
     getLivroPorId,
     insereLivro,
-    modificaLivro,
+    modificaLivroPorID,
     deletaLivro,
 };
