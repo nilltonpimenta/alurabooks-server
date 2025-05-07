@@ -20,7 +20,7 @@ function insereLivro(livroNovo) {
     fs.writeFileSync("livros.json", JSON.stringify(novaListaLivros));
 }
 
-function modificaLivro(mod, id) {
+function modificaLivroPorID(mod, id) {
     let livrosAtuais = getTodosLivros();
     const indiceMod = livrosAtuais.findIndex((livro) => livro.id === id);
 

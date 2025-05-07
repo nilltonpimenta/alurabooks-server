@@ -3,7 +3,7 @@ const {
     getLivroPorId,
     insereLivro,
     modificaLivro,
-    deletaLivro,
+    deletaLivroPorID,
 } = require("../services/livro");
 
 function getLivros(req, res) {
@@ -71,7 +71,7 @@ function deleteLivro(req, res) {
     try {
         const id = req.params.id;
         if (id && Number(id)) {
-            deletaLivro(id);
+            deletaLivroPorID(id);
             res.send("Item deletado com sucesso!");
         } else {
             res.send("ID inválido!");
